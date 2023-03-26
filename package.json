@@ -1,10 +1,10 @@
 {
   "name": "scratch",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dist/main.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,14 @@
     "@nestjs/core": "^9.3.9",
     "@nestjs/platform-express": "^9.3.9",
     "reflect-metadata": "^0.1.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andiezz/NestJS_demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Andiezz/NestJS_demo/issues"
+  },
+  "homepage": "https://github.com/Andiezz/NestJS_demo#readme",
+  "description": ""
 }
