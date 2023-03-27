@@ -1,17 +1,22 @@
-import { Controller, Get, Post, Body, Param, NotFoundException  } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateMessageDto } from './dtos/create-message.dto';
 import { MessagesService } from './messages.service';
 
 @Controller('messages')
 export class MessagesController {
-  messagesService: MessagesService;
-
-  // Service is creating its own dependencies
-  //! DON'T DO THIS 
-  //? USE DEPENDENCY INJECTION
-  constructor() {
-    this.messagesService = new MessagesService();
-  }
+  constructor(public messagesService: MessagesService, 
+    public messagesService2: MessagesService, 
+    public messagesService3: MessagesService) {
+      // console.log(messagesService === messagesService2) // true
+      // console.log(messagesService === messagesService3) // true
+    } //? 3 arguments but call to only 1 instance dependency
 
   @Get()
   listMessages() {
@@ -19,7 +24,8 @@ export class MessagesController {
   }
 
   @Post()
-  createMessages(@Body() body: CreateMessageDto) { //? class transformer
+  createMessages(@Body() body: CreateMessageDto) {
+    //? class transformer
     return this.messagesService.create(body.content);
   }
 
