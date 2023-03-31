@@ -22,5 +22,5 @@ Content-Type: application/json
 }
 
 ### Delete a user a given id
-DELETE http://localhost:3000/auth/1
+DELETE http://localhost:3000/auth/2
 
