@@ -15,6 +15,9 @@ export class UsersService {
   }
 
   findOne(id: number) {
+    if (!id) {
+      return null;
+    }
     const user = this.repo.findOneBy({ id: id });
 
     return user;
@@ -28,7 +31,7 @@ export class UsersService {
     const user = await this.findOne(id);
 
     if (!user) {
-      throw new NotFoundException('User not found')
+      throw new NotFoundException('User not found');
     }
 
     Object.assign(user, attrs);
@@ -39,7 +42,7 @@ export class UsersService {
     const user = await this.findOne(id);
 
     if (!user) {
-      throw new NotFoundException('User not found')
+      throw new NotFoundException('User not found');
     }
 
     return this.repo.remove(user);
