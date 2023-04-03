@@ -5,7 +5,10 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
+  OneToMany
 } from 'typeorm';
+import { Report } from 'src/reports/report.entity';
+import { report } from 'process';
 
 @Entity() //? tell TypeORM to create a new TABLE to model this class / collection
 export class User {
@@ -18,6 +21,10 @@ export class User {
   @Column()
   password: string;
   //? all done at startup by synchronize true (ì we add a new field)
+
+  //? do not cause the change
+  @OneToMany(() => Report, (report) => report.user)
+  reports: Report[];
 
   //? HOOK only work when pass in the user entity
   @AfterInsert()
