@@ -13,6 +13,8 @@ interface ClassConstructor {
   new (...args: any[]): {}
 }
 
+//? INTERCEPTOR run after any middleware, any guard 
+
 export function Serialize(dto: ClassConstructor) {
   return UseInterceptors(new SerializeInterceptor(dto));
 }

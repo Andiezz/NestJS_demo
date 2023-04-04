@@ -20,7 +20,10 @@ export class User {
 
   @Column()
   password: string;
-  //? all done at startup by synchronize true (ì we add a new field)
+  //? all done at startup by synchronize true (if we add a new field)
+
+  @Column({ default: true })
+  admin: boolean;
 
   //? do not cause the change
   @OneToMany(() => Report, (report) => report.user)
