@@ -65,23 +65,23 @@ describe('AuthService', () => {
     );
   });
 
-  // it('throws if signin is called with an unused email', async () => {
-  //   await expect(
-  //     service.signin('asdflkj@asdlfkj.com', 'passdflkj'),
-  //   ).rejects.toThrow(NotFoundException);
-  // });
+  it('throws if signin is called with an unused email', async () => {
+    await expect(
+      service.signin('asdflkj@asdlfkj.com', 'passdflkj'),
+    ).rejects.toThrow(NotFoundException);
+  });
 
-  // it('throws if an invalid password is provided', async () => {
-  //   await service.signup('laskdjf@alskdfj.com', 'password');
-  //   await expect(
-  //     service.signin('laskdjf@alskdfj.com', 'laksdlfkj'),
-  //   ).rejects.toThrow(BadRequestException);
-  // });
+  it('throws if an invalid password is provided', async () => {
+    await service.signup('laskdjf@alskdfj.com', 'password');
+    await expect(
+      service.signin('laskdjf@alskdfj.com', 'laksdlfkj'),
+    ).rejects.toThrow(BadRequestException);
+  });
 
-  // it('can log in with a valid password', async () => {
-  //   await service.signup('asdf@asdf.com', 'mypassword');
+  it('can log in with a valid password', async () => {
+    await service.signup('asdf@asdf.com', 'mypassword');
 
-  //   const user = await expect(service.signin('asdf@asdf.com', 'mypassword'));
-  //   expect(user).toBeDefined();
-  // });
+    const user = await expect(service.signin('asdf@asdf.com', 'mypassword'));
+    expect(user).toBeDefined();
+  });
 });

@@ -8,7 +8,6 @@ import {
   OneToMany
 } from 'typeorm';
 import { Report } from 'src/reports/report.entity';
-import { report } from 'process';
 
 @Entity() //? tell TypeORM to create a new TABLE to model this class / collection
 export class User {
