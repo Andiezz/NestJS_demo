@@ -5,7 +5,6 @@ import {
   Injectable
 } from '@nestjs/common'
 import { UsersService } from '../users.service'
-import { Observable } from 'rxjs'
 
 //? Use Interceptor to connect to the DI System
 //? Interceptor -> Decorator -> Handler
