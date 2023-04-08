@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
   OneToMany
 } from 'typeorm';
-import { Report } from 'src/reports/report.entity';
+import { Report } from '../reports/report.entity';
 
 @Entity() //? tell TypeORM to create a new TABLE to model this class / collection
 export class User {

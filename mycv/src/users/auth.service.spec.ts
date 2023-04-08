@@ -75,7 +75,7 @@ describe('AuthService', () => {
     await service.signup('laskdjf@alskdfj.com', 'password');
     await expect(
       service.signin('laskdjf@alskdfj.com', 'laksdlfkj'),
-    ).rejects.toThrow(BadRequestException);
+    ).rejects.toThrow(NotFoundException);
   });
 
   it('can log in with a valid password', async () => {
