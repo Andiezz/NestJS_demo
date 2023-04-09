@@ -9,6 +9,7 @@ import { ReportsModule } from './reports/reports.module';
 import { User } from './users/user.entity';
 import { Report } from './reports/report.entity';
 import { config } from 'process';
+const settings = require('../ormconfig.js');
 const cookieSession = require('cookie-session');
 
 @Module({
@@ -17,20 +18,21 @@ const cookieSession = require('cookie-session');
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
-    TypeOrmModule.forRootAsync({
-      inject: [ConfigService],
-      useFactory: (config: ConfigService) => {
-        //? DI
-        return {
-          type: 'sqlite',
-          database: config.get<string>('DB_NAME'),
-          //? sync entity with database through TypeORM
-          //! danger in production: lost data when remove a column 
-          synchronize: true,
-          entities: [User, Report],
-        };
-      },
-    }),
+    TypeOrmModule.forRoot(settings),
+    // TypeOrmModule.forRootAsync({
+    //   inject: [ConfigService],
+    //   useFactory: (config: ConfigService) => {
+    //     //? DI
+    //     return {
+    //       type: 'sqlite',
+    //       database: config.get<string>('DB_NAME'),
+    //       //? sync entity with database through TypeORM
+    //       //! danger in production: lost data when remove a column 
+    //       synchronize: true,
+    //       entities: [User, Report],
+    //     };
+    //   },
+    // }),
     // TypeOrmModule.forRoot({
     //   //? TypeORM automatically make the repository
     //   type: 'sqlite',
