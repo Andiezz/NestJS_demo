@@ -2,7 +2,7 @@ POST http://localhost:3000/post
 Content-Type: application/json
 
 {
-  "title": "Post test",
+  "title": "Post test 2",
   "content": "test",
   "description": "test"
 }
