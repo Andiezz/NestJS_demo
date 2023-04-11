@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { UserController } from './controllers/user.controller';
 import { UserService } from '../user/services/user.service';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -11,6 +11,7 @@ import { JwtStrategy } from './jwt.strategy';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserRepository } from './repositories/user.repository';
 
+@Global()
 @Module({
   imports: [
     MongooseModule.forFeature([
@@ -37,5 +38,6 @@ import { UserRepository } from './repositories/user.repository';
   ],
   controllers: [UserController, AuthController],
   providers: [UserService, AuthService, JwtStrategy, UserRepository],
+  exports: [UserService],
 })
 export class UserModule {}

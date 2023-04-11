@@ -3,13 +3,13 @@ Content-Type: application/json
 
 {
   "name": "Vu Thanh Ann",
-  "email": "vthanh.an577@gmail.com",
+  "email": "vthanh.an5777@gmail.com",
   "password": "ndhtrangg612"
 }
 
 ###
 GET http://localhost:3000/user/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEyMjA2ODQsImV4cCI6MTY4MTIyNjgwNn0.w03kmEDdUlss7QLjsPl0Jdg5GBQbMHb82r-wLGTtrp8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEyMjQ5MTMsImV4cCI6MTY4MTIzMTAzNX0.EuywcyEtI4WmhTy-MmXfEAACja5MWl9esuo3jYcMpnE
 
 ### 
 POST http://localhost:3000/auth/login
@@ -18,4 +18,12 @@ Content-Type: application/json
 {
   "email": "vthanh.an577@gmail.com",
   "password": "ndhtrangg612"
+}
+
+###
+POST http://localhost:3000/auth/refresh
+Content-Type: application/json
+
+{
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEyMjQ4OTksImV4cCI6MTY4MTIzMTAyMX0.LG_8jeoJWZyP5M1g7QlymBLx2_oyu1RdUyDO37IBiw0"
 }
