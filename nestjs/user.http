@@ -27,3 +27,7 @@ Content-Type: application/json
 {
   "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEyMjQ4OTksImV4cCI6MTY4MTIzMTAyMX0.LG_8jeoJWZyP5M1g7QlymBLx2_oyu1RdUyDO37IBiw0"
 }
+
+###
+POST http://localhost:3000/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEyMjUwNTQsImV4cCI6MTY4MTIzMTE3Nn0.GcPrLzKySE7cC3_srHbewYyRbMPgfL4xVJyHsCnErBQ
