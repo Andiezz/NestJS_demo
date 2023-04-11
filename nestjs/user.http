@@ -1,0 +1,21 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Vu Thanh Ann",
+  "email": "vthanh.an577@gmail.com",
+  "password": "ndhtrangg612"
+}
+
+###
+GET http://localhost:3000/user/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEyMjA2ODQsImV4cCI6MTY4MTIyNjgwNn0.w03kmEDdUlss7QLjsPl0Jdg5GBQbMHb82r-wLGTtrp8
+
+### 
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "vthanh.an577@gmail.com",
+  "password": "ndhtrangg612"
+}

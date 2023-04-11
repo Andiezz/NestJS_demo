@@ -6,3 +6,23 @@ Content-Type: application/json
   "content": "test",
   "description": "test"
 }
+
+###
+GET http://localhost:3000/post
+
+###
+GET http://localhost:3000/post/6435560d0e7814ad9c11fe70
+
+###
+PUT http://localhost:3000/post/6435560d0e7814ad9c11fe70
+Content-Type: application/json
+
+{
+  "title": "Post test 3",
+  "content": "test",
+  "description": "test"
+}
+
+###
+DELETE http://localhost:3000/post/6435560d0e7814ad9c11fe70
+
