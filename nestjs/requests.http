@@ -1,0 +1,8 @@
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "title": "Post test",
+  "content": "test",
+  "description": "test"
+}
