@@ -1,5 +1,6 @@
 POST http://localhost:3000/post
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEzMTE2NzMsImV4cCI6MTY4MTMxNzc5NX0.-Q2udW2cCTWryTsV9tDxbr7QSFem70h8zOgGVT-Ul8w
 
 {
   "title": "Post test 2",
@@ -11,7 +12,7 @@ Content-Type: application/json
 GET http://localhost:3000/post
 
 ###
-GET http://localhost:3000/post/6435560d0e7814ad9c11fe70
+GET http://localhost:3000/post/6436c7e0e9334fdbe846f47b
 
 ###
 PUT http://localhost:3000/post/6435560d0e7814ad9c11fe70
@@ -26,3 +27,6 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/post/6435560d0e7814ad9c11fe70
 
+###
+GET http://localhost:3000/post/user/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ0aGFuaC5hbjU3N0BnbWFpbC5jb20iLCJpYXQiOjE2ODEzMTIzODYsImV4cCI6MTY4MTMxODUwOH0.UkdCHd0y07_yADVff2grpItNCJcd1JsxHbUOvPh2PQQ
