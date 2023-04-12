@@ -6,9 +6,12 @@ import {
   Param,
   Post,
   Put,
+  UseFilters,
 } from '@nestjs/common';
 import { PostService } from '../services/post.service';
 import { CreatePostDto, UpdatePostDto } from '../dtos/post.dto';
+import { ExceptionLoggerFilter } from 'src/utils/exceptionLogger.filter';
+import { HttpExceptionFilter } from 'src/utils/httpException.filter';
 
 @Controller('post')
 export class PostController {
@@ -20,6 +23,8 @@ export class PostController {
   }
 
   @Get(':id')
+  // @UseFilters(ExceptionLoggerFilter)
+  @UseFilters(HttpExceptionFilter)
   getPostById(@Param('id') id: string) {
     return this.postService.getPostById(id);
   }
